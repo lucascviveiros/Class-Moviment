@@ -17,19 +17,23 @@ public class CubeController : MonoBehaviour {
 			second = sec;
 		}
 
-		public int GetInit() {
+		public int GetInit() 
+		{
 			return init;
 		}
 
-		public int GetSec() {
+		public int GetSec() 
+		{
 			return second;
 		}
 
-		public void SomaInit() {
+		public void SomaInit() 
+		{
 			this.init++;
 		}
 
-		public void SubSec() {
+		public void SubSec() 
+		{
 			second--;
 		}
 	}
@@ -46,28 +50,33 @@ public class CubeController : MonoBehaviour {
 
 		public MovClass() { }
 
-		public MovClass(float Angle, float Radius, float RotateSpeed, Vector2 vector) {
+		public MovClass(float Angle, float Radius, float RotateSpeed, Vector2 vector) 
+		{
 			mAngle = Angle;
 			this.Radius = Radius;
 			this.mRotateSpeed = RotateSpeed;
 			mVector = vector;
 		}
 
-		public MovClass(float Radius, float RotateSpeed) {
+		public MovClass(float Radius, float RotateSpeed) 
+		{
 			this.Radius = Radius;
 			this.mRotateSpeed = RotateSpeed;
 		}
 	
-		public int MoreFast() {
+		public int MoreFast() 
+		{
 			mRotationZ += 3;
 			return mRotationZ;
 		}
 
-		public void Reset() {
+		public void Reset() 
+		{
 			mRotationZ = 0;
 		}
 
-		public Quaternion ResetZ() {
+		public Quaternion ResetZ() 
+		{
 			return this.target;
 		}
 
@@ -107,7 +116,8 @@ public class CubeController : MonoBehaviour {
 		originalPosition = myCubeRed.transform.localPosition;
 	}
 
-	void Start () {
+	void Start () 
+	{
 
 		myBtnInit = GameObject.Find("myBtnInit").GetComponent<Button>();
 		myBtnSec = GameObject.Find("myBtnSec").GetComponent<Button>();
@@ -121,21 +131,25 @@ public class CubeController : MonoBehaviour {
 
 	}
 
-	public void InitUpdate() {
+	public void InitUpdate() 
+	{
 		myLife.SomaInit();
 	}
 
-	public void SecUpdate() {
+	public void SecUpdate() 
+	{
 		myLife.SubSec();
 	}
 
-	public void MotionUpdate() {
+	public void MotionUpdate() 
+	{
 		movZ += 5;  //Z-axis Red cube speed
 		myMov1.MoreFast();
 		myMov2.MoreFast();
 	}
 
-	public void Reset() {
+	public void Reset() 
+	{
 		movZ = 5;
 		myMov1.Reset();
 		myMov2.Reset();
